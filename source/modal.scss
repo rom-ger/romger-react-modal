@@ -1,0 +1,115 @@
+$rg-react-base-modal-black: rgba(0, 0, 0, .5);
+$rg-react-base-modal-white: #fff;
+$rg-react-base-modal-blue: #0034a6;
+$rg-react-base-modal-gray: #8b8b90;
+
+.rg-react-base-modal {
+  &__back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $rg-react-base-modal-black;
+    cursor: pointer;
+    z-index: 2000;
+
+    &--pointer {
+      cursor: pointer;
+    }
+
+    &--multiple {
+      background: none;
+    }
+  }
+
+  &__modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    min-width: 100px;
+    max-width: 95%;
+    height: auto;
+    min-height: 100px;
+    max-height: 95%;
+    border-radius: 6px;
+    background: $rg-react-base-modal-white;
+    opacity: 1;
+    z-index: 2001;
+
+    &--full-screen {
+      min-width: 100%;
+      max-height: 100vh;
+      border-radius: inherit !important;
+    }
+  }
+
+  &__modal-title {
+    width: 100%;
+    height: 49px;
+    min-height: 49px;
+    padding: 12px;
+    background: $rg-react-base-modal-blue;
+    color: $rg-react-base-modal-white;
+    font-size: 18px;
+    box-sizing: border-box;
+
+    .modal-icon {
+      margin-left: 12px;
+      color: $rg-react-base-modal-white !important;
+      fill: $rg-react-base-modal-white !important;
+      font-size: 18px;
+      width: 24px !important;
+      min-width: 24px !important;
+      max-width: 24px !important;
+      height: 24px !important;
+      min-height: 24px !important;
+      max-height: 24px !important;
+      cursor: pointer;
+    }
+  }
+
+  &__button-wrap {
+    width: 100%;
+    height: 56px;
+    min-height: 56px;
+    padding: 0 12px;
+    border-top: 1px solid $rg-react-base-modal-gray;
+    box-sizing: border-box;
+  }
+
+  &__button {
+    margin: 12px 6px;
+    padding: 6px;
+    border-radius: 3px;
+    background: $rg-react-base-modal-blue;
+    color: $rg-react-base-modal-white;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.54;
+    }
+
+    &--default {
+      background: $rg-react-base-modal-gray;
+    }
+
+    &--disabled {
+      cursor: default;
+      opacity: 0.54;
+    }
+  }
+
+  &__content-wrap {
+    padding: 12px;
+    background: $rg-react-base-modal-white;
+    overflow: auto;
+    
+    &--overflow-visible {
+      overflow: visible;
+    }
+  }
+}
